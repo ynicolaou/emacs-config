@@ -27,5 +27,59 @@
 (load-file (concat conf-dir "cider-conf.el"))
 (load-file (concat conf-dir "clojure-conf.el"))
 (load-file (concat conf-dir "ido-conf.el"))
+(load-file (concat conf-dir "lisp-conf.el"))
+(load-file (concat conf-dir "paredit-conf.el"))
+(load-file (concat conf-dir "popwin-conf.el"))
+(load-file (concat conf-dir "recentf-conf.el"))
+(load-file (concat conf-dir "smex-conf.el"))
+(load-file (concat conf-dir "backup-dir-conf.el"))
+(load-file (concat conf-dir "ahs-conf.el"))
+(load-file (concat conf-dir "rainbow-conf.el"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; comment region
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+
+;; Activate occur easily inside isearch
+(define-key isearch-mode-map (kbd "C-o")
+  (lambda () (interactive)
+    (let ((case-fold-search isearch-case-fold-search))
+      (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
+
+(global-linum-mode t)
+(setq linum-format "%4d \u2502 ")
+
+(global-set-key (kbd  "C-x x") 'rgrep)
+
+(defun switch-to-most-recent-buffer ()
+      (interactive)
+      (switch-to-buffer (other-buffer (current-buffer) 1)))
+(global-set-key (kbd  "C-M-<return>") 'switch-to-most-recent-buffer)
+(global-set-key (kbd  "C-M-<backspace>") 'revert-buffer)
+(global-set-key (kbd  "C-S-a") 'mark-whole-buffer)
+
+(defun sudo-edit (&optional arg)
+  "Edit currently visited file as root. With a prefix ARG prompt
+for a file to visit. Will also prompt for a file to visit if
+current buffer is not visiting a file."
+  (interactive "P")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo:root@localhost:"
+                         (ido-read-file-name "Find file(as root): ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+(defun insert-pprint ()
+  (interactive)
+  (insert "clojure.pprint/pprint")
+  (live-delete-whitespace-except-one))
+
+(global-set-key (kbd "C-c s p") 'insert-pprint)
+
+;; show keystrokes in mini-buffer instantly
+(setq echo-keystrokes 0.01)
+
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+(message "\n\n init.el done loading  \n\n")
