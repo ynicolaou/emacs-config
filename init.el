@@ -19,3 +19,4 @@
     (package-install 'better-defaults)))
 
 (load-file (concat conf-dir "ace-jump-conf.el"))
+(load-file (concat conf-dir "fiplr-conf.el"))
