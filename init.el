@@ -20,3 +20,12 @@
 
 (load-file (concat conf-dir "ace-jump-conf.el"))
 (load-file (concat conf-dir "fiplr-conf.el"))
+(load-file (concat conf-dir "util-fns.el"))
+(load-file (concat conf-dir "auto-complete-conf.el"))
+(load-file (concat conf-dir "browse-kill-ring-conf.el"))
+(load-file (concat conf-dir "color-theme-conf.el"))
+(load-file (concat conf-dir "cider-conf.el"))
+(load-file (concat conf-dir "clojure-conf.el"))
+(load-file (concat conf-dir "ido-conf.el"))
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
