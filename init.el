@@ -48,6 +48,7 @@
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 (global-linum-mode t)
+;;(setq linum-format "%d ")
 (setq linum-format "%4d \u2502 ")
 
 (global-set-key (kbd  "C-x x") 'rgrep)
