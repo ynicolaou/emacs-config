@@ -37,6 +37,7 @@
 (load-file (concat conf-dir "rainbow-conf.el"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-c n e b") 'cider-eval-buffer)
 
 ;; comment region
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
@@ -82,5 +83,7 @@ current buffer is not visiting a file."
 
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (message "\n\n init.el done loading  \n\n")
