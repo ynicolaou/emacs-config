@@ -50,8 +50,8 @@
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 (global-linum-mode t)
-;;(setq linum-format "%d ")
-(setq linum-format "%4d \u2502 ")
+(setq linum-format "%d ")
+;;(setq linum-format "%4d \u2502 ")
 
 (global-set-key (kbd  "C-x x") 'rgrep)
 
@@ -86,5 +86,7 @@ current buffer is not visiting a file."
 (global-undo-tree-mode)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+(scroll-bar-mode -1)
 
 (message "\n\n init.el done loading  \n\n")
