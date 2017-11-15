@@ -87,6 +87,13 @@ current buffer is not visiting a file."
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; removes scrollbar
 (scroll-bar-mode -1)
+
+;; switch between windows
+(global-set-key (kbd "C-c n") 'next-multiframe-window)
+(global-set-key (kbd "C-x n") 'other-frame)
+
+(show-paren-mode 1)
 
 (message "\n\n init.el done loading  \n\n")
