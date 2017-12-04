@@ -36,6 +36,7 @@
 (load-file (concat conf-dir "ahs-conf.el"))
 (load-file (concat conf-dir "rainbow-conf.el"))
 (load-file (concat conf-dir "neotree-conf.el"))
+(load-file (concat conf-dir "php-conf.el"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-c n e b") 'cider-eval-buffer)
