@@ -97,4 +97,8 @@ current buffer is not visiting a file."
 
 (show-paren-mode 1)
 
+(eval-after-load 'clojure-mode
+   '(sayid-setup-package))
+
 (message "\n\n init.el done loading  \n\n")
+
