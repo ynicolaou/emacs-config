@@ -37,6 +37,7 @@
 (load-file (concat conf-dir "rainbow-conf.el"))
 (load-file (concat conf-dir "neotree-conf.el"))
 (load-file (concat conf-dir "php-conf.el"))
+(load-file (concat conf-dir "mc-conf.el"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-c n e b") 'cider-eval-buffer)
@@ -101,4 +102,3 @@ current buffer is not visiting a file."
    '(sayid-setup-package))
 
 (message "\n\n init.el done loading  \n\n")
-
