@@ -101,4 +101,15 @@ current buffer is not visiting a file."
 (eval-after-load 'clojure-mode
    '(sayid-setup-package))
 
+;; automatically clean up bad whitespace
+(setq whitespace-action '(auto-cleanup))
+;; only show bad whitespace
+(setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab))
+;; This gives you a tab of 2 spaces for coffee files
+(custom-set-variables
+ '(coffee-tab-width 2))
+
+;; 2 spaces indentation for scss/css files 
+(setq css-indent-offset 2)
+
 (message "\n\n init.el done loading  \n\n")
