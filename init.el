@@ -62,7 +62,7 @@
 (setq backup-directory-alist
       `(("." . ,(concat user-emacs-directory "backups"))))
 
-;; no lock files!
+;; no lock files
 (setq create-lockfiles nil)
 
 (global-set-key (kbd  "C-x x") 'rgrep)
