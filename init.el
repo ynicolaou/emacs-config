@@ -55,6 +55,16 @@
 (setq linum-format "%d ")
 ;;(setq linum-format "%4d \u2502 ")
 
+;; Use pandoc to render markdown file previews
+(setq markdown-command "/usr/local/bin/pandoc")
+
+;; To not clutter up the file tree with Emacs’ backup files, save them to a dedicated directory:
+(setq backup-directory-alist
+      `(("." . ,(concat user-emacs-directory "backups"))))
+
+;; no lock files!
+(setq create-lockfiles nil)
+
 (global-set-key (kbd  "C-x x") 'rgrep)
 
 (defun switch-to-most-recent-buffer ()
@@ -107,9 +117,33 @@ current buffer is not visiting a file."
 ;; (setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab))
 ;; This gives you a tab of 2 spaces for coffee files
 (custom-set-variables
- '(coffee-tab-width 2))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
+ '(package-selected-packages
+   (quote
+    (markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex sayid recentf-ext rainbow-mode rainbow-delimiters popwin php-mode paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode ac-cider))))
 
 ;; 2 spaces indentation for scss/css files 
 (setq css-indent-offset 2)
 
+;; 2 spaces indentation for js files 
+(setq js-indent-level 2)
+
+;; use spaces instead of tabs when indenting
+(setq-default indent-tabs-mode nil)
+
 (message "\n\n init.el done loading  \n\n")
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ediff-even-diff-A ((((class color) (background dark)) (:background "dark green"))))
+ '(ediff-even-diff-B ((((class color) (background dark)) (:background "dark red"))))
+ '(ediff-odd-diff-A ((((class color) (background dark)) (:background "dark green"))))
+ '(ediff-odd-diff-B ((((class color) (background dark)) (:background "dark red"))))
+ '(mumamo-background-chunk-major ((((class color) (background dark)) (:background "black"))))
+ '(mumamo-background-chunk-submode1 ((((class color) (background dark)) (:background "black")))))
