@@ -27,15 +27,6 @@
 (setq cider-popup-stacktraces-in-repl t)
 (add-to-list 'same-window-buffer-names "*cider*")
 
-;;Auto Complete
-(require 'ac-cider )
-
-(add-hook 'cider-mode-hook 'ac-cider-setup)
-(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-mode))
-
 ;; Specify the print length to be 100 to stop infinite sequences killing
 ;; things. This might be dangerous for some people relying on
 ;; *print-length* being larger. Consider a work around

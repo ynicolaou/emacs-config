@@ -21,7 +21,7 @@
 (load-file (concat conf-dir "ace-jump-conf.el"))
 (load-file (concat conf-dir "fiplr-conf.el"))
 (load-file (concat conf-dir "util-fns.el"))
-(load-file (concat conf-dir "auto-complete-conf.el"))
+(load-file (concat conf-dir "company-mode-conf.el"))
 (load-file (concat conf-dir "browse-kill-ring-conf.el"))
 (load-file (concat conf-dir "color-theme-conf.el"))
 (load-file (concat conf-dir "cider-conf.el"))
@@ -124,7 +124,7 @@ current buffer is not visiting a file."
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex sayid recentf-ext rainbow-mode rainbow-delimiters popwin php-mode paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode ac-cider))))
+    (company-quickhelp company cider markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex sayid recentf-ext rainbow-mode rainbow-delimiters popwin php-mode paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode))))
 
 ;; 2 spaces indentation for scss/css files 
 (setq css-indent-offset 2)
