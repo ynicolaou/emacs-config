@@ -47,3 +47,5 @@
 
 ;; https://github.com/clojure-emacs/cider#basic-configuration
 (setq cider-auto-select-error-buffer nil)
+(setq cider-stacktrace-frames-background-color "#000000")
+(setq cider-test-items-background-color "#000000")
