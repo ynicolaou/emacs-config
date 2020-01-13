@@ -124,7 +124,7 @@ current buffer is not visiting a file."
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (company-quickhelp company cider markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex sayid recentf-ext rainbow-mode rainbow-delimiters popwin php-mode paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode))))
+    (zprint-mode company-quickhelp company cider markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex sayid recentf-ext rainbow-mode rainbow-delimiters popwin php-mode paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode))))
 
 ;; 2 spaces indentation for scss/css files 
 (setq css-indent-offset 2)

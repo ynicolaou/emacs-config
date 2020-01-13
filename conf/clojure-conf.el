@@ -66,3 +66,6 @@
 (define-key clojure-mode-map (kbd "C-c C-e") 'live-warn-when-cider-not-connected)
 (define-key clojure-mode-map (kbd "C-c C-l") 'live-warn-when-cider-not-connected)
 (define-key clojure-mode-map (kbd "C-c C-r") 'live-warn-when-cider-not-connected)
+
+(add-hook 'clojure-mode-hook 'zprint-mode)
+
