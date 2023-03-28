@@ -1,4 +1,5 @@
 (require 'package)
+(require 'flycheck-clj-kondo)
 
 (defvar conf-dir "/Users/yiannis/.emacs.d/conf/")
 
@@ -38,6 +39,7 @@
 (load-file (concat conf-dir "neotree-conf.el"))
 (load-file (concat conf-dir "php-conf.el"))
 (load-file (concat conf-dir "mc-conf.el"))
+(load-file (concat conf-dir "zprint.el"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-c n e b") 'cider-eval-buffer)
@@ -123,8 +125,7 @@ current buffer is not visiting a file."
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
  '(package-selected-packages
-   (quote
-    (zprint-mode company-quickhelp company cider markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex sayid recentf-ext rainbow-mode rainbow-delimiters popwin php-mode paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode))))
+   '(sayid flycheck-clj-kondo flycheck lsp-mode inf-clojure org json-mode company-quickhelp company cider markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex recentf-ext rainbow-mode rainbow-delimiters popwin php-mode paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode)))
 
 ;; 2 spaces indentation for scss/css files 
 (setq css-indent-offset 2)
@@ -132,8 +133,13 @@ current buffer is not visiting a file."
 ;; 2 spaces indentation for js files 
 (setq js-indent-level 2)
 
+;;automatically format before save buffer
+(add-hook 'clojure-mode-hook 'zprint-mode)
+
 ;; use spaces instead of tabs when indenting
 (setq-default indent-tabs-mode nil)
+
+(global-flycheck-mode)
 
 (message "\n\n init.el done loading  \n\n")
 (custom-set-faces
