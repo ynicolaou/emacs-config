@@ -9,3 +9,7 @@ ido.last
 smex-items
 locatedbs
 elpa/archives
+.cache
+eln-cache
+transient
+.mc-lists.el
