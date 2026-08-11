@@ -5,7 +5,7 @@
 (require 'package)
 (require 'flycheck-clj-kondo)
 
-(defvar conf-dir "/Users/yiannis/.emacs.d/conf/")
+(defvar conf-dir (expand-file-name "conf/" user-emacs-directory))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
