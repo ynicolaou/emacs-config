@@ -19,6 +19,8 @@
   (when (not (package-installed-p 'better-defaults))
     (package-install 'better-defaults)))
 
+(setq exec-path (append exec-path '("/Users/yiannis/git/devops/bin")))
+
 (load-file (concat conf-dir "ace-jump-conf.el"))
 (load-file (concat conf-dir "fiplr-conf.el"))
 (load-file (concat conf-dir "util-fns.el"))
@@ -37,9 +39,9 @@
 (load-file (concat conf-dir "ahs-conf.el"))
 (load-file (concat conf-dir "rainbow-conf.el"))
 (load-file (concat conf-dir "neotree-conf.el"))
-(load-file (concat conf-dir "php-conf.el"))
 (load-file (concat conf-dir "mc-conf.el"))
 (load-file (concat conf-dir "zprint.el"))
+(load-file (concat conf-dir "tide-conf.el"))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-c n e b") 'cider-eval-buffer)
@@ -53,9 +55,8 @@
     (let ((case-fold-search isearch-case-fold-search))
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
-(global-linum-mode t)
-(setq linum-format "%d ")
-;;(setq linum-format "%4d \u2502 ")
+;; linum.el was removed in Emacs 29; display-line-numbers is the built-in replacement.
+(global-display-line-numbers-mode t)
 
 ;; Use pandoc to render markdown file previews
 (setq markdown-command "/usr/local/bin/pandoc")
@@ -125,13 +126,29 @@ current buffer is not visiting a file."
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
  '(package-selected-packages
-   '(sayid flycheck-clj-kondo flycheck lsp-mode inf-clojure org json-mode company-quickhelp company cider markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex recentf-ext rainbow-mode rainbow-delimiters popwin php-mode paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode)))
+   '(impatient-mode flymd all-the-icons clojure-mode cider tide typescript-mode mmm-mode sayid flycheck-clj-kondo flycheck lsp-mode inf-clojure org json-mode company-quickhelp company markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex recentf-ext rainbow-mode rainbow-delimiters popwin paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode))
+ '(safe-local-variable-values
+   '((eval customize-set-variable 'cider-path-translations
+           (list
+            (cons "/app/src"
+                  (concat
+                   (clojure-project-dir)
+                   "src"))
+            (cons "/app/local-m2"
+                  (concat
+                   (clojure-project-dir)
+                   "local-m2"))
+            (cons "/app/test"
+                  (concat
+                   (clojure-project-dir)
+                   "test")))))))
 
 ;; 2 spaces indentation for scss/css files 
 (setq css-indent-offset 2)
 
 ;; 2 spaces indentation for js files 
 (setq js-indent-level 2)
+(setq typescript-indent-level 2)
 
 ;;automatically format before save buffer
 (add-hook 'clojure-mode-hook 'zprint-mode)
