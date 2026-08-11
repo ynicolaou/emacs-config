@@ -1,3 +1,7 @@
+;; Third-party packages emit native-compiler warnings we can't fix from here.
+;; Keep them in *Native-compile-Log* instead of popping up a warning buffer.
+(setq native-comp-async-report-warnings-errors 'silent)
+
 (require 'package)
 (require 'flycheck-clj-kondo)
 
@@ -21,12 +25,12 @@
 
 (setq exec-path (append exec-path '("/Users/yiannis/git/devops/bin")))
 
-(load-file (concat conf-dir "ace-jump-conf.el"))
+(load-file (concat conf-dir "avy-conf.el"))
 (load-file (concat conf-dir "fiplr-conf.el"))
 (load-file (concat conf-dir "util-fns.el"))
 (load-file (concat conf-dir "company-mode-conf.el"))
 (load-file (concat conf-dir "browse-kill-ring-conf.el"))
-(load-file (concat conf-dir "color-theme-conf.el"))
+(load-file (concat conf-dir "theme-conf.el"))
 (load-file (concat conf-dir "cider-conf.el"))
 (load-file (concat conf-dir "clojure-conf.el"))
 (load-file (concat conf-dir "ido-conf.el"))
@@ -126,7 +130,7 @@ current buffer is not visiting a file."
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
  '(package-selected-packages
-   '(impatient-mode flymd all-the-icons clojure-mode cider tide typescript-mode mmm-mode sayid flycheck-clj-kondo flycheck lsp-mode inf-clojure org json-mode company-quickhelp company markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex recentf-ext rainbow-mode rainbow-delimiters popwin paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav color-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet ace-jump-mode))
+   '(impatient-mode flymd all-the-icons clojure-mode cider tide typescript-mode mmm-mode sayid flycheck-clj-kondo flycheck lsp-mode inf-clojure org json-mode company-quickhelp company markdown-mode markdown-mode+ markdown-preview-mode vue-mode elpy yaml-mode undo-tree terraform-mode smex recentf-ext rainbow-mode rainbow-delimiters popwin paredit neotree multiple-cursors idomenu flx-ido fiplr elisp-slime-nav cyberpunk-theme coffee-mode browse-kill-ring better-defaults auto-highlight-symbol align-cljlet avy))
  '(safe-local-variable-values
    '((eval customize-set-variable 'cider-path-translations
            (list
