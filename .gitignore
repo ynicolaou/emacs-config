@@ -13,3 +13,8 @@ elpa/archives
 eln-cache
 transient
 .mc-lists.el
+tramp
+
+# Byte-compiled output is derived from the .el sources. Tracking it let an
+# Emacs 25-compiled queue.elc survive for years and break cider-connect.
+*.elc
