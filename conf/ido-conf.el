@@ -1,3 +1,5 @@
+;;; ido-conf.el --- ido configuration  -*- lexical-binding: t; -*-
+
 (require 'idomenu)
 (require 'flx-ido)
 

@@ -1,3 +1,5 @@
+;;; browse-kill-ring-conf.el --- browse-kill-ring configuration  -*- lexical-binding: t; -*-
+
 (require 'browse-kill-ring)
 
 (setq browse-kill-ring-highlight-current-entry t)

@@ -1,3 +1,5 @@
+;;; rainbow-conf.el --- rainbow-delimiters colors  -*- lexical-binding: t; -*-
+
 ;; turn on rainbow-mode to see the rainbow!
 (require 'rainbow-delimiters)
 (set-face-attribute 'rainbow-delimiters-depth-1-face nil :foreground "#BB2222")

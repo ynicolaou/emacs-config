@@ -1,3 +1,5 @@
+;;; popwin-conf.el --- popwin configuration  -*- lexical-binding: t; -*-
+
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 

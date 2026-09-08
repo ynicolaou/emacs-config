@@ -1,3 +1,5 @@
+;;; recentf-conf.el --- recentf configuration  -*- lexical-binding: t; -*-
+
 (require 'recentf)
 
 ;; get rid of `find-file-read-only' and replace it with something

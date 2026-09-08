@@ -1,3 +1,5 @@
+;;; tide-conf.el --- tide (TypeScript) configuration  -*- lexical-binding: t; -*-
+
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)

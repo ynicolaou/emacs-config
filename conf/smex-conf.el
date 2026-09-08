@@ -1,3 +1,5 @@
+;;; smex-conf.el --- smex configuration  -*- lexical-binding: t; -*-
+
 (require 'smex)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)

@@ -1,3 +1,5 @@
+;;; ahs-conf.el --- auto-highlight-symbol configuration  -*- lexical-binding: t; -*-
+
 (defvar auto-highlight-symbol-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "M-J") 'ahs-backward)

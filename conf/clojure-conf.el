@@ -1,3 +1,5 @@
+;;; clojure-conf.el --- clojure-mode configuration  -*- lexical-binding: t; -*-
+
 (eval-after-load 'find-file-in-project
   '(add-to-list 'ffip-patterns "*.clj"))
 

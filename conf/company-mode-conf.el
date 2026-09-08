@@ -1,3 +1,5 @@
+;;; company-mode-conf.el --- company-mode configuration  -*- lexical-binding: t; -*-
+
 (require 'cider)
 (require 'cider-repl)
 (require 'cider-mode)

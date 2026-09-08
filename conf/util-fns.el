@@ -1,4 +1,5 @@
-;;handy util fns
+;;; util-fns.el --- handy utility functions  -*- lexical-binding: t; -*-
+
 
 (defun delete-this-buffer-and-file ()
   "Removes file connected to current buffer and kills buffer."

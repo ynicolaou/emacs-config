@@ -1,3 +1,5 @@
+;;; cider-conf.el --- CIDER configuration  -*- lexical-binding: t; -*-
+
 (require 'cider)
 (require 'cider-apropos)
 (require 'cider-macroexpansion)

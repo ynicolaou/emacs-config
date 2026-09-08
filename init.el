@@ -1,3 +1,5 @@
+;;; init.el --- Emacs init file  -*- lexical-binding: t; -*-
+
 ;; Third-party packages emit native-compiler warnings we can't fix from here.
 ;; Keep them in *Native-compile-Log* instead of popping up a warning buffer.
 (setq native-comp-async-report-warnings-errors 'silent)

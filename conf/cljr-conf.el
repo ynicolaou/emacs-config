@@ -1,3 +1,5 @@
+;;; cljr-conf.el --- clj-refactor configuration  -*- lexical-binding: t; -*-
+
 (require 'clj-refactor)
 
 (defun my-clojure-mode-hook ()
