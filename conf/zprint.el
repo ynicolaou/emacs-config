@@ -37,7 +37,7 @@
 ;;
 ;;; Code:
 
-(defvar zprint-bin-path "zprint"
+(defvar zprint-bin-path "/Users/yiannis/git/devops/bin/zprint"
   "The path to zprint binary.")
 
 (defvar zprint-lighter " zp"
